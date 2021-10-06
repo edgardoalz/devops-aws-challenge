@@ -6,7 +6,7 @@ module "rds_instance" {
 
   engine            = "mysql"
   engine_version    = "5.7.19"
-  family            = "mysql57"
+  family            = "mysql5.7"
   major_engine_version = "5.7"
   instance_class    = var.rds_instance_class
   allocated_storage = var.rds_allocated_storage

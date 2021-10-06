@@ -4,19 +4,19 @@ variable "vpc_cidr" {
 }
 
 variable "vpc_azs" {
-  type = set(string)
+  type = list(string)
 }
 
 variable "vpc_private_subnets" {
-  type = set(string)
+  type = list(string)
 }
 
 variable "vpc_public_subnets" {
-  type = set(string)
+  type = list(string)
 }
 
 variable "vpc_database_subnets" {
-  type = set(string)
+  type = list(string)
 }
 
 # Application

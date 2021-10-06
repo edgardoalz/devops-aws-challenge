@@ -16,4 +16,4 @@ if [ $? -eq  1 ]; then
   terraform workspace new $ENVIRONMENT
 fi
 
-terraform plan -var-file=config/$ENVIRONMENT.tfvars
+terraform apply -var-file=config/$ENVIRONMENT.tfvars
