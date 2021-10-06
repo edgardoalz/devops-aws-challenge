@@ -1,0 +1,4 @@
+#!/bin/bash
+set -e
+
+exec flyway -url=jdbc:"$DATABASE_DSN" -user="$DATABASE_USER" -password="$DATABASE_PASSWORD" -connectRetries=5 "$FLYWAY_USAGE"

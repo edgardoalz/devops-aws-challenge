@@ -1,0 +1,23 @@
+{
+  "name": "aws-ec2-challenge",
+  "version": "1.0.0",
+  "description": "DevOps Challenge",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/edgardoalz/devops-aws-ec2-challenge.git"
+  },
+  "author": "Edgardo Alvarez <edgardoalz@protonmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/edgardoalz/devops-aws-ec2-challenge/issues"
+  },
+  "homepage": "https://github.com/edgardoalz/devops-aws-ec2-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mysql": "^2.18.1"
+  }
+}

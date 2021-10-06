@@ -1,0 +1,41 @@
+version: '3.1'
+
+services:
+
+  mysql:
+    image: mysql:5.7
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: database
+      WAIT_HOSTS: mysql:3306
+
+  app:
+    build: 
+      context: ./app
+    ports:
+      - 8080:8080
+    environment:
+      APP_PORT: 8080
+      MYSQL_HOST: mysql
+      MYSQL_PORT: 3306
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: database
+    depends_on:
+      - mysql
+      - data
+
+  data:
+    build:
+      context: ./data
+    environment:
+      DATABASE_DSN: mysql://mysql:3306/database
+      DATABASE_USER: user
+      DATABASE_PASSWORD: password
+      FLYWAY_USAGE: migrate
+    depends_on:
+      - mysql
